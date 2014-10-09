@@ -1,0 +1,6 @@
+[submodule "golang-docker"]
+	path = golang-docker
+	url = git@github.com:eyasuyuki/golang-docker.git
+[submodule "nginx"]
+	path = nginx
+	url = git@github.com:eyasuyuki/nginx.git
