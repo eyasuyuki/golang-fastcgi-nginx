@@ -28,7 +28,7 @@ Golang fastcgi served from Nginx on Docker.
 
     sudo docker-enter `docker ps | grep "dockerfile/nginx" | cut -d " " -f 1`
 
-## Check golang container ip
+## Check golang container IP address
 
     [ root@ff9ebd359af1:~ ]$ cat /etc/hosts
     172.17.0.16	ff9ebd359af1
