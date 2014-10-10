@@ -14,9 +14,9 @@ Golang fastcgi served from Nginx on Docker.
     docker build -t dockerfile/nginx .
     docker run -d -p 80:80 --link fcgihost:fcgihost --name nginx dockerfile/nginx
 
-# For boot2docker Logging:
+# For boot2docker user:
 
-## user in doot2docker host
+## Logging in doot2docker host
 
     boot2docker ssh
 
