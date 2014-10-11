@@ -16,7 +16,7 @@ Golang fastcgi served from Nginx on Docker.
 
 # For boot2docker user:
 
-## Logging in doot2docker host
+## Logging in boot2docker host
 
     boot2docker ssh
 
