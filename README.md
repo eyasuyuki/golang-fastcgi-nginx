@@ -27,7 +27,7 @@ Golang fastcgi served from Nginx on Docker.
 
     docker run --rm -v /usr/local/bin:/target jpetazzo/nsenter
 
-## Login nginx container for fig user
+## Login nginx container
 
     sudo docker-enter `docker ps | grep "\"nginx\"" | cut -d " " -f 1`
 
