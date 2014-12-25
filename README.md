@@ -13,13 +13,15 @@ Golang fastcgi served from Nginx on Docker.
     fig build
     fig up -d
 
-# Build and start golang fastcgi container
+#  For non-fig user:
+
+## Build and start golang fastcgi container
 
     cd golang-docker/hello
     docker build -t google/golang-hello .
     docker run -d -p 9001:9001 --name fcgihost google/golang-hello
 
-# Build and start nginx and link fastcgi container
+## Build and start nginx and link fastcgi container
 
     cd ../../nginx
     docker build -t dockerfile/nginx .
@@ -63,4 +65,3 @@ Golang fastcgi served from Nginx on Docker.
     --- fcgihost ping statistics ---
     2 packets transmitted, 2 received, 0% packet loss, time 999ms
     rtt min/avg/max/mdev = 0.130/0.168/0.206/0.038 ms
-
