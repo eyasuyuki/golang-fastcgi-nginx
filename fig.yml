@@ -1,0 +1,15 @@
+nginx:
+  build: nginx
+  links:
+   - fcgihost
+  ports:
+   - "80:80"
+  expose:
+   - "80"
+
+fcgihost:
+  build: golang-docker/hello
+  ports:
+   - "9001:9001"
+  expose:
+   - "9001"

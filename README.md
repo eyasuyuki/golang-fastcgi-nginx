@@ -2,6 +2,17 @@
 
 Golang fastcgi served from Nginx on Docker.
 
+# Clone sub-repositories
+
+    cd golang-fastcgi-nginx
+    git clone git@github.com:eyasuyuki/golang-docker.git
+    git clone git@github.com:eyasuyuki/nginx.git
+
+# Build and start all with fig
+
+    fig build
+    fig up -d
+
 # Build and start golang fastcgi container
 
     cd golang-docker/hello
@@ -16,7 +27,11 @@ Golang fastcgi served from Nginx on Docker.
 
 # For boot2docker user:
 
-## Logging in boot2docker host
+## Accece to nginx app
+
+    curl -i http://$(boot2docker ip)/
+
+## Login boot2docker host
 
     boot2docker ssh
 
