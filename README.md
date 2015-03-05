@@ -8,20 +8,18 @@ Golang fastcgi served from Nginx on Docker.
     git clone git@github.com:eyasuyuki/golang-docker.git
     git clone git@github.com:eyasuyuki/nginx.git
 
-# Build and start all with fig
+# Build and start all with Docker Compose
 
-    fig build
-    fig up -d
-
-# For boot2docker user:
+    $(docker-machine env <vmname>)
+    docker-compose up -d
 
 ## Accece to nginx app
 
-    curl -i http://$(boot2docker ip)/
+    curl -i http://$(docker-machine ip <vmname>)/
 
-## Login boot2docker host
+## Login virtual machine
 
-    boot2docker ssh
+    docker-machine ssh <vmname>
 
 ## Install nsenter
 
@@ -35,17 +33,3 @@ Golang fastcgi served from Nginx on Docker.
 
     grep "fcighost" /etc/hosts
     ping fcgihost
-
-#  For non-fig user:
-
-## Build and start golang fastcgi container
-
-    cd golang-docker/hello
-    docker build -t eyasuyuki/golang-hello .
-    docker run -d -p 9001:9001 --name fcgihost google/golang-hello
-
-## Build and start nginx and link fastcgi container
-
-    cd ../../nginx
-    docker build -t eyasuyuki/nginx .
-    docker run -d -p 80:80 --link fcgihost:fcgihost --name nginx eyasuyuki/nginx
